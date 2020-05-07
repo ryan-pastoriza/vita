@@ -13,4 +13,12 @@ class JobPost extends Model
         return self::leftJoin('companies', 'companies.company_id', 'job_posts.company_id')
             ->get();
     }
+
+    public function applicants(){
+        return $this->hasMany(JobApplicant::class, 'applicant_id');
+    }
+
+    public function datePosted(){
+        return formatDate('m/d/Y', $this->created_at);
+    }
 }

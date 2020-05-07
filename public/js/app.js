@@ -51488,6 +51488,7 @@ var render = function() {
             { staticClass: "recent-grad-flex" },
             _vm._l(_vm.alumnus, function(al) {
               return _c("img", {
+                key: al.spi_id,
                 class: _vm.isActive(al),
                 attrs: { src: _vm.asset("images/blankuser.png"), alt: "" },
                 on: {

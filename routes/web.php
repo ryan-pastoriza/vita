@@ -17,9 +17,10 @@ Auth::routes(['register' => false]);
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
+    Route::get('/', 'DashboardController@index')->name('dashboard');
+    Route::get('ajx/recentalumnus', 'ProfileController@recentAlumnus');
     
     Route::group(['middleware' => 'is_alumnus'], function(){
-        Route::get('/', 'DashboardController@index')->name('dashboard');
         Route::get('/dashboard/ajx/fetchfeed', 'DashboardController@ajxfetchfeed');
         Route::get('/dashboard/ajx/singlefeed', 'DashboardController@ajxsinglefeed');
         Route::get('/dashboard/ajx/fetchreplies', 'DashboardController@ajxfetchreplies');
@@ -60,7 +61,6 @@ Route::group(['middleware' => 'auth'], function(){
     
         Route::get('aboutus', 'AboutUsController@index')->name('aboutus');
         Route::get('help', 'HelpController@index')->name('help');
-        Route::get('ajx/recentalumnus', 'ProfileController@recentAlumnus');
     });  
 
     Route::group(['middleware' => 'is_company'], function(){

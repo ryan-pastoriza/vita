@@ -17,7 +17,7 @@ class AlumnusMiddleware
     public function handle($request, Closure $next)
     {
         if(Auth::user()->account_type != 'alumnus'){
-            return redirect(route('company'));
+            return redirect(route('dashboard'));
         }
         return $next($request);
     }

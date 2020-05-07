@@ -12,10 +12,18 @@ class DashboardController extends Controller
     public function index(){
         $user = Auth::user();
         $data = [];
-        $data['personal_info'] = \App\Alumnus::personalInfo($user->ssi_id);
         $data['partners'] = \App\Company::select('company_id','logo')->get();
         $data['ads'] = \App\Advertisement::select('ad_id','file')->get();
-        return view('dashboard.dashboard')->with(['nav'=>'dashboard', 'data'=>$data]);
+
+        if(Auth::user()->account_type == 'alumnus'){
+            $data['personal_info'] = \App\Alumnus::personalInfo($user->ssi_id);
+            return view('dashboard.dashboard')->with(['nav'=>'dashboard', 'data'=>$data]);
+        }
+        else {
+            $data['company_info'] = \App\Company::find(Auth::user()->company_id);
+            $data['jobs_posted'] = \App\JobPost::where('company_id', Auth::user()->company_id)->get();
+            return view('company.profile')->with(['nav'=>'dashboard', 'data'=>$data]);;
+        }
     }
 
     public function ajxcompanyinfo(Request $request){

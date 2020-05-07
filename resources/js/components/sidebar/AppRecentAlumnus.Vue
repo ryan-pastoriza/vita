@@ -14,7 +14,7 @@
         </div>
         <div v-if="alumnus.length < 5">
             <div class="recent-grad-flex">
-                <img @click="currentAlumnus=al" v-for="al in alumnus" :src="asset('images/blankuser.png')" :class="isActive(al)" alt="">
+                <img @click="currentAlumnus=al" v-for="al in alumnus" :key="al.spi_id" :src="asset('images/blankuser.png')" :class="isActive(al)" alt="">
             </div>
             <div class="grad-info">
                 <h5>{{currentAlumnus.fullname}}</h5>

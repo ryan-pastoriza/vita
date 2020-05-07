@@ -25,10 +25,10 @@
 			<a href="index.html" class="pull-left">
 				<img src="{{asset('/images/logo.png')}}" class="logo">
 			</a>
-			<div class="alumni-type pull-left">
+			<!-- <div class="alumni-type pull-left">
 				<span class="myriad f-11">Alumni Type: </span>
 				<span class="myriad f-11">Under Graduate</span>
-			</div>
+			</div> -->
 			<ul class="notifs pull-left">
 				<li>
 					<img src="{{asset('/images/messageico.png')}}" class="messageico">
@@ -40,7 +40,7 @@
 				</li>
 			</ul>
 			<div class="sign-out pull-right">
-				<span class="myriad f-11 f-white m-5">Sign out</span>
+				<a href="{{route('logout')}}" class="myriad f-11 f-white m-5">Sign out</a>
 				<img src="{{asset('/images/signout.png')}}">
 			</div>
 		</div>
@@ -73,22 +73,25 @@
 		<h6><b>Greetings!!:</b> <span>Mr. Del Rosario, you can update your CV for additional information and have a privilege  to be hired...</span></h6>
 	</div>
 
-	<div class="main-content">
+	<div class="main-content" id="app">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9 s-pad">
 					<div class="visit visit-company">
 						<div class="head relative">
-							<img src="{{asset('/images/mitlogo.png')}}" alt="">
+							<img src="{{asset($data['company_info']->logo)}}" alt="">
 							<div class="oh">
 								<div class="pull-leftmt-15" style="margin-left:180px;padding-bottom: 52px;">
-									<h3 class="mt-0 c-white f-32">MITTAL Solutions</h3>
-									<h6 class="mt-0 c-white f-11">Fernandez Village, Butuan City Philippines</h6>
-									<span class="c-dwhite o-7 f-11 mr-15">Tel: 342-2258</span>
-									<span class="c-dwhite o-7 f-11">Fax: 802-5226</span><br/>
-									<h5 class="c-dwhite o-7 f-12">Job Posted: 25</h5>
+									<h3 class="mt-0 c-white f-32">{{$data['company_info']->company_name}}</h3>
+									<h6 class="mt-0 c-white f-11">{{$data['company_info']->address}}</h6>
+									<span class="c-dwhite o-7 f-11 mr-15">Tel: {{$data['company_info']->tel_no}}</span>
+									<span class="c-dwhite o-7 f-11">Fax: {{$data['company_info']->fax_no}}</span><br/>
+									<h5 class="c-dwhite o-7 f-12">Job Posted: {{sizeof($data['jobs_posted'])}}</h5>
 								</div>
 								<div class="change-header">
+									<form action="">
+										<input type="file">
+									</form>
 									<h6 class="c-bright-green mt-0">Change Header</h6>
 									<h6 class="c-bright-green mt-3">Background</h6>
 								</div>
@@ -102,14 +105,21 @@
 									<div class="job-posted bg-white p-15" style="padding-left:25px">
 										<h5 class="mt-0 c-light-green f-13 border-bot p-bot-10">Jobs Posted</h5>
 										<ul class="oh mb-10">
-											<li>
-												<div class="pull-left">
-													<h5 class="mt-0"><a href="" class="c-bright-green">Application Developer</a></h5>
-													<span class="f-11 c-sdark">Date Posted: 2/25/2017</span>
-												</div>
-												<h5 class="pull-right c-light-green">25</h5>
-											</li>
-											<li>
+											
+											@foreach($data['jobs_posted'] as $job)
+
+												<li>
+													<div class="pull-left">
+														<h5 class="mt-0"><a href="" class="c-bright-green">{{$job->title}}</a></h5>
+														<span class="f-11 c-sdark">Date Posted: {{$job->datePosted()}}</span>
+													</div>
+													<h5 class="pull-right c-light-green">{{sizeof($job->applicants)}}</h5>
+
+												</li>
+
+											@endforeach
+											
+											<!-- <li>
 												<div class="pull-left">
 													<h5 class="mt-0"><a href="" class="c-bright-green">Application Support Analyst</a></h5>
 													<span class="f-11 c-sdark">Date Posted: 2/25/2017</span>
@@ -157,10 +167,10 @@
 													<span class="f-11 c-sdark">Date Posted: 3/07/2017</span>
 												</div>
 												<h5 class="pull-right c-light-green">44</h5>
-											</li>
+											</li> -->
 										</ul>
 										<div class="see-more">
-											<i class="fa fa-angle-down c-light"></i><span class="f-10 c-dark">SEE MORE</span><i class="fa fa-angle-up c-light"></i>
+											<!-- <i class="fa fa-angle-down c-light"></i><span class="f-10 c-dark">SEE MORE</span><i class="fa fa-angle-up c-light"></i> -->
 										</div>
 									</div>
 								</div>
@@ -366,7 +376,7 @@
 					
 				<div class="col-xs-3 s-pad bg-white">
 					<div class="right-pane">
-						<div class="recent-graduates mb-15 border-bot pb-15">
+						<!-- <div class="recent-graduates mb-15 border-bot pb-15">
 							<h5><span class="c-green">ACLC</span> RECENT GRADUATES</h5>
 							<div class="grad-carousel">
 								<span class="fa fa-chevron-left cnav-prev"></span>								
@@ -385,7 +395,8 @@
 								</div>
 								<span class="fa fa-chevron-right cnav-next"></span>
 							</div>
-						</div>
+						</div> -->
+						<app-recentalumnus url="{{asset('')}}"></app-recentalumnus>
 
 
 						
@@ -481,6 +492,7 @@
 <script type="text/javascript" src="{{asset('/js/jquery.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('/js/bootstrap.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('/plugins/owl_carousel/dist/owl.carousel.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/app.js')}}"></script>
 
 <script>
 	$(document).ready(function(){
