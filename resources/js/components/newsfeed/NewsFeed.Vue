@@ -1,5 +1,5 @@
 <template>
-    <div class="col-xs-6 s-pad">
+    <div class="s-pad" :class="width">
         <div class="job-posted bg-white">
             <div class="posts-pane">
                 <div v-for="feed in feeds">
@@ -204,7 +204,7 @@
 
 <script>
 export default {
-    props:['url'],
+    props:['url', 'width'],
 
     data(){
         return {

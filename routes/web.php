@@ -19,13 +19,14 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/', 'DashboardController@index')->name('dashboard');
     Route::get('ajx/recentalumnus', 'ProfileController@recentAlumnus');
-    
+    Route::get('/dashboard/ajx/fetchfeed', 'DashboardController@ajxfetchfeed');
+    Route::get('/dashboard/ajx/fetchreplies', 'DashboardController@ajxfetchreplies');
+    Route::get('/dashboard/ajx/singlefeed', 'DashboardController@ajxsinglefeed');
+    Route::post('/dashboard/ajx/postreply', 'DashboardController@ajxPostReply');
+
+
     Route::group(['middleware' => 'is_alumnus'], function(){
-        Route::get('/dashboard/ajx/fetchfeed', 'DashboardController@ajxfetchfeed');
-        Route::get('/dashboard/ajx/singlefeed', 'DashboardController@ajxsinglefeed');
-        Route::get('/dashboard/ajx/fetchreplies', 'DashboardController@ajxfetchreplies');
-        Route::post('/dashboard/ajx/postreply', 'DashboardController@ajxPostReply');
-    
+        
         Route::get('profile', 'ProfileController@index')->name('profile');
         Route::get('ajxprov', 'ProfileController@province');
         Route::get('ajxcity', 'ProfileController@provcity');
