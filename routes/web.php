@@ -65,6 +65,7 @@ Route::group(['middleware' => 'auth'], function(){
     });  
 
     Route::group(['middleware' => 'is_company'], function(){
-        Route::get('/company/profile', 'CompanyProfileController@index')->name('company');
+        Route::get('/company/dashboard', 'CompanyProfileController@index')->name('company');
+        Route::get('/profile', 'CompanyProfileController@index')->name('company.profile');
     });  
 });

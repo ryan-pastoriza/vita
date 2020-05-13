@@ -22,7 +22,7 @@ class DashboardController extends Controller
         else {
             $data['company_info'] = \App\Company::find(Auth::user()->company_id);
             $data['jobs_posted'] = \App\JobPost::where('company_id', Auth::user()->company_id)->get();
-            return view('company.profile')->with(['nav'=>'dashboard', 'data'=>$data]);;
+            return view('company.dashboard')->with(['nav'=>'dashboard', 'data'=>$data]);;
         }
     }
 
