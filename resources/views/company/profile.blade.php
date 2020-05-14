@@ -7,28 +7,7 @@
 	<div class="col-xs-4 s-pad bg-white">
 		<div class="profile-nav">
 			<h5 class="c-bright-green f-13 border-bot pb-15 mb-10" style="padding-left:40px;padding-top:5px;">Profile</h5>
-			<ul style="padding-left: 45px;">
-				<li class="active">
-					<i class="fa fa-fw fa-briefcase f-20 c-lighter pull-left"></i>
-					<a href="business_info.html">Business Information</a>
-				</li>
-				<li>
-					<i class="fa fa-fw fa-tag f-20 c-lighter pull-left"></i>
-					<a href="address.html">Address</a>
-				</li>
-				<li>
-					<i class="fa fa-fw fa-envelope f-20 c-lighter pull-left"></i>
-					<a href="contacts.html">Contacts</a>
-				</li>
-				<li>
-					<i class="fa fa-fw fa-pencil-square f-20 c-lighter pull-left"></i>
-					<a href="mission_vision.html">Mission Vision Goals</a>
-				</li>
-				<li>
-					<i class="fa fa-fw fa-question-circle f-20 c-lighter pull-left"></i>
-					<a href="help.html">Help</a>
-				</li>
-			</ul>
+			<company-leftnav url="{{asset('')}}" nav="{{$subnav}}"></company-leftnav>
 			<div class="profile-social" style="padding-left:40px;">
 				<img src="../images/facebook-ico.png">
 				<img src="../images/twitter-ico.png">

@@ -158,25 +158,10 @@
 							<img src="{{asset('/images/posts/chart.png')}}" alt="" class="img img-responsive">
 						</div>
 
-						<div class="partners-pane">
-							<h5>Partners</h5>
-							<ul>
-								<li><a href="#"><img src="{{asset('/images/ads/engtech.png')}}" class="img img-responsive"></a></li>
-								<li><a href="#"><img src="{{asset('/images/ads/aclc.png')}}" class="img img-responsive"></a></li>
-							</ul>
-						</div>
+						<app-partners url="{{asset('')}}" data="{{json_encode($data['partners'])}}"></app-partners>
 
 
-						<div class="ads-pane">
-							<h5>Vita Members Ads</h5>
-							<ul>
-								<li><a href="#"><img src="{{asset('/images/ads/onlinerevo.png')}}" class="img img-responsive"></a></li>
-								<li><a href="#"><img src="{{asset('/images/ads/juicy.png')}}" class="img img-responsive"></a></li>
-								<li><a href="#"><img src="{{asset('/images/ads/laz.png')}}" class="img img-responsive"></a></li>
-								<li><a href="#"><img src="{{asset('/images/ads/bpi.png')}}" class="img img-responsive"></a></li>
-								<li><a href="#"><img src="{{asset('/images/ads/accenture.png')}}" class="img img-responsive"></a></li>
-							</ul>
-						</div>
+						<app-ads url="{{asset('')}}" data="{{json_encode($data['ads'])}}"></app-ads>
 					</div>
 				</div>
 			</div>
@@ -226,6 +211,13 @@
 <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
 
 <script>
+	function myMap() {
+	var mapProp= {
+	    center:new google.maps.LatLng(8.940366299999999, 125.51579170000002),
+	    zoom:15,
+	};
+	var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+	}
 	$(document).ready(function(){
 	  	$('.owl-carousel.g-carousel').owlCarousel({
 		    loop:true,
@@ -299,6 +291,7 @@
 		document.getElementById('headerFile').click();
 	});
 </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxXg0aQhrnee_xVc80byQSbtJ2hElwoEA&callback=myMap"></script>
 
 </body>
 </html>

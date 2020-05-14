@@ -61,6 +61,7 @@ Vue.component('app-ads', require('./components/sidebar/AppAds.vue').default);
 Vue.component('app-help', require('./components/help/AppHelp.vue').default);
 
 Vue.component('company-topnav', require('./components/company/CompanyTopNav.vue').default);
+Vue.component('company-leftnav', require('./components/company/CompanyLeftNav.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
