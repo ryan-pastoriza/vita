@@ -43320,24 +43320,20 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
+    _c("li", { class: _vm.navActive(_vm.nav, "contacts") }, [
+      _c("i", { staticClass: "fa fa-fw fa-envelope f-20 c-lighter pull-left" }),
+      _vm._v(" "),
+      _c("a", { attrs: { href: _vm.asset(_vm.url, "profile/contacts") } }, [
+        _vm._v("Contacts")
+      ])
+    ]),
+    _vm._v(" "),
     _vm._m(0),
     _vm._v(" "),
-    _vm._m(1),
-    _vm._v(" "),
-    _vm._m(2)
+    _vm._m(1)
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("i", { staticClass: "fa fa-fw fa-envelope f-20 c-lighter pull-left" }),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "contacts.html" } }, [_vm._v("Contacts")])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

@@ -8,9 +8,9 @@
             <i class="fa fa-fw fa-tag f-20 c-lighter pull-left"></i>
             <a :href="asset(url, 'profile/address')">Address</a>
         </li>
-        <li>
+        <li :class="navActive(nav, 'contacts')">
             <i class="fa fa-fw fa-envelope f-20 c-lighter pull-left"></i>
-            <a href="contacts.html">Contacts</a>
+            <a :href="asset(url, 'profile/contacts')">Contacts</a>
         </li>
         <li>
             <i class="fa fa-fw fa-pencil-square f-20 c-lighter pull-left"></i>
