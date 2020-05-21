@@ -11,6 +11,8 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('/css/custom.css')}}">
 	<link rel="stylesheet" href="{{asset('/css/visit.css')}}">
 	<link rel="stylesheet" href="{{asset('/css/profile.css')}}">
+	<script src="http://cloud.tinymce.com/stable/tinymce.min.js?apiKey=eplqq2bh36kh5c0hmf2gb7pi3vuowkbs2rvs8mtpsxaopdii"></script>
+  	<script>tinymce.init({selector:'textarea'});</script>
 
 	<style>
 		.work-suggestions ul li > img {
@@ -293,5 +295,6 @@
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxXg0aQhrnee_xVc80byQSbtJ2hElwoEA&callback=myMap"></script>
 
+@yield('js')
 </body>
 </html>

@@ -17,19 +17,16 @@
 	<div class="col-xs-8 s-pad">
 		<div class="job-posted bg-white">
 			<div class="business-info p-15">
-				<h4 class="mt-0 c-bright-green border-bot pb-10 mb-10">Business Information</h4>
+				<div class="heading border-bot" style="margin:0 0 20px 0;padding-bottom:16px;display:flex;align-items:center;justify-content:space-between;">
+					<h4 class="mt-0 c-bright-green">Business Information</h4>
+					<div class="update-info" style="position:relative;margin-top:0;">
+						<img src="{{asset('images/profile/pencil.png')}}" style="margin-top:0" alt="" class="pull-left">
+						<a href="{{route('company.profile.update')}}" class="f-10 c-green pull-left" style="margin-top:3px;">Update your information</a>
+					</div>
+				</div>
+				
 				<div class="business-info-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione rem dolorem ipsum natus quae, molestias labore expedita, eligendi nemo aliquid aperiam doloribus recusandae nulla cum perspiciatis repudiandae asperiores, maiores omnis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro id neque, quibusdam beatae ipsam. Excepturi, accusantium repellat inventore sint similique id magni porro officiis nesciunt illo. Alias, expedita. Quod, adipisci!</p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A numquam incidunt earum aut culpa consequatur inventore molestias autem nihil neque voluptas dignissimos tenetur pariatur tempore totam vero, delectus cum, quibusdam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae cupiditate error debitis tenetur eligendi et incidunt minus dolor rem deserunt, temporibus doloremque, voluptate hic accusantium veritatis eum vel natus consequuntur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet earum nulla aspernatur, rerum repellendus. Non natus, quaerat. Reiciendis vitae minima impedit vel iusto eveniet facilis, esse modi, sapiente maxime dolores.</p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A numquam incidunt earum aut culpa consequatur inventore molestias autem nihil neque voluptas dignissimos tenetur pariatur tempore totam vero, delectus cum, quibusdam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae cupiditate error debitis tenetur eligendi et incidunt minus dolor rem deserunt, temporibus doloremque, voluptate hic accusantium veritatis eum vel natus consequuntur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet earum nulla aspernatur, rerum repellendus. Non natus, quaerat. Reiciendis vitae minima impedit vel iusto eveniet facilis, esse modi, sapiente maxime dolores.</p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A numquam incidunt earum aut culpa consequatur inventore molestias autem nihil neque voluptas dignissimos tenetur pariatur tempore totam vero, delectus cum, quibusdam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae cupiditate error debitis tenetur eligendi et incidunt minus dolor rem deserunt, temporibus doloremque, voluptate hic accusantium veritatis eum vel natus consequuntur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet earum nulla aspernatur, rerum repellendus. Non natus, quaerat. Reiciendis vitae minima impedit vel iusto eveniet facilis, esse modi, sapiente maxime dolores.</p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A numquam incidunt earum aut culpa consequatur inventore molestias autem nihil neque voluptas dignissimos tenetur pariatur tempore totam vero, delectus cum, quibusdam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae cupiditate error debitis tenetur eligendi et incidunt minus dolor rem deserunt, temporibus doloremque, voluptate hic accusantium veritatis eum vel natus consequuntur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet earum nulla aspernatur, rerum repellendus. Non natus, quaerat. Reiciendis vitae minima impedit vel iusto eveniet facilis, esse modi, sapiente maxime dolores.</p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A numquam incidunt earum aut culpa consequatur inventore molestias autem nihil neque voluptas dignissimos tenetur pariatur tempore totam vero, delectus cum, quibusdam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae cupiditate error debitis tenetur eligendi et incidunt minus dolor rem deserunt, temporibus doloremque, voluptate hic accusantium veritatis eum vel natus consequuntur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet earum nulla aspernatur, rerum repellendus. Non natus, quaerat. Reiciendis vitae minima impedit vel iusto eveniet facilis, esse modi, sapiente maxime dolores.</p>
+					{!!$data['company_info']->business_information!!}
 				</div>	
 			</div>
 		</div>

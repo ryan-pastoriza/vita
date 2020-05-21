@@ -17,7 +17,13 @@
 	<div class="col-xs-8 s-pad">
         <div class="job-posted bg-white">
             <div class="business-info p-15">
-                <h4 class="mt-0 c-bright-green border-bot pb-10 mb-10">Contact</h4>
+            <div class="heading border-bot" style="margin:0 0 20px 0;padding-bottom:16px;display:flex;align-items:center;justify-content:space-between;">
+					<h4 class="mt-0 c-bright-green">Contact</h4>
+					<div class="update-info" style="position:relative;margin-top:0;">
+						<img src="{{asset('images/profile/pencil.png')}}" style="margin-top:0" alt="" class="pull-left">
+						<a class="f-10 c-green pull-left" data-toggle="modal" style="margin-top:3px;" data-target="#personalModal">Update your information</a>
+					</div>
+				</div>
                 <div class="business-info-content">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione rem dolorem ipsum natus quae, molestias labore expedita, eligendi nemo aliquid aperiam doloribus recusandae nulla cum perspiciatis repudiandae asperiores, maiores omnis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro id neque, quibusdam beatae ipsam. Excepturi, accusantium repellat inventore sint similique id magni porro officiis nesciunt illo. Alias, expedita. Quod, adipisci! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores impedit eligendi, iusto iste nesciunt, pariatur quisquam nemo consequuntur, odit repellat ex dolores quam nostrum architecto fugiat id voluptates. Facere, maxime.</p>
 

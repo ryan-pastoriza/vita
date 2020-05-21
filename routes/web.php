@@ -67,6 +67,8 @@ Route::group(['middleware' => 'auth'], function(){
     Route::group(['middleware' => 'is_company'], function(){
         Route::get('/company/dashboard', 'CompanyProfileController@index')->name('company');
         Route::get('/profile/business_information', 'CompanyProfileController@index')->name('company.profile');
+        Route::get('/profile/business_information/update', 'CompanyProfileController@businessInformationUpdate')->name('company.profile.update');
+        Route::post('/profile/business_information/store', 'CompanyProfileController@store')->name('company.profile.store');
         Route::get('/profile/address', 'CompanyProfileController@address')->name('company.address');
         Route::get('/profile/contacts', 'CompanyProfileController@contacts')->name('company.contacts');
     });  
