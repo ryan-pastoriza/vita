@@ -18,18 +18,25 @@
         <div class="job-posted bg-white">
             <div class="business-info p-15">
             <div class="heading border-bot" style="margin:0 0 20px 0;padding-bottom:16px;display:flex;align-items:center;justify-content:space-between;">
-					<h4 class="mt-0 c-bright-green">Contact</h4>
+					<h4 class="mt-0 c-bright-green">Mision, Vision, Goals</h4>
 					<div class="update-info" style="position:relative;margin-top:0;">
 						<img src="{{asset('images/profile/pencil.png')}}" style="margin-top:0" alt="" class="pull-left">
-						<a href="{{route('company.contacts.update')}}" class="f-10 c-green pull-left" style="margin-top:3px;">Update your information</a>
+						<a href="{{route('company.mission.update')}}" class="f-10 c-green pull-left" style="margin-top:3px;">Update your information</a>
 					</div>
 				</div>
                 <div class="business-info-content">
-					{!!$data['company_info']->contact_description!!}
-                    
-					<a href="#" class="c-bright-green f-14 mr-10">Tel: {{$data['company_info']->tel_no}}</a>
-					<a href="#" class="c-bright-green f-14 mr-10">Fax: {{$data['company_info']->fax_no}}</a>
-					<a href="#" class="c-bright-green f-14">Email: {{$data['company_info']->email}}</a>
+                    <div class="mb-24">
+                        <h4 class="mt-0 c-light mb-10">Mission</h4>
+                        {!!$data['company_info']->mission!!}
+                    </div>
+                    <div class="mb-24">
+                        <h4 class="mt-0 c-light mb-10">Vision</h4>
+                        {!!$data['company_info']->vision!!}
+                    </div>
+                    <div class="mb-24">
+                        <h4 class="mt-0 c-light mb-10">Goals</h4>
+                        {!!$data['company_info']->goals!!}
+                    </div>
                 </div>	
             </div>
         </div>

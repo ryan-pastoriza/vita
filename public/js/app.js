@@ -2199,11 +2199,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['preloaded', 'url'],
+  props: ['preloaded', 'url', 'width', 'help'],
   data: function data() {
     return {
-      helps: []
+      helps: [],
+      link: ''
     };
   },
   methods: {},
@@ -43328,39 +43336,28 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(0),
-    _vm._v(" "),
-    _vm._m(1)
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
+    _c("li", { class: _vm.navActive(_vm.nav, "mission") }, [
       _c("i", {
         staticClass: "fa fa-fw fa-pencil-square f-20 c-lighter pull-left"
       }),
       _vm._v(" "),
-      _c("a", { attrs: { href: "mission_vision.html" } }, [
+      _c("a", { attrs: { href: _vm.asset(_vm.url, "profile/mission") } }, [
         _vm._v("Mission Vision Goals")
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
+    ]),
+    _vm._v(" "),
+    _c("li", { class: _vm.navActive(_vm.nav, "help") }, [
       _c("i", {
-        staticClass: "fa fa-fw fa-question-circle f-20 c-lighter pull-left"
+        staticClass: "fa fa-fw fa-pencil-square f-20 c-lighter pull-left"
       }),
       _vm._v(" "),
-      _c("a", { attrs: { href: "help.html" } }, [_vm._v("Help")])
+      _c("a", { attrs: { href: _vm.asset(_vm.url, "profile/help") } }, [
+        _vm._v("Help")
+      ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -43445,16 +43442,69 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "col-md-9 s-pad" }, [
+  return _c("div", { staticClass: "s-pad", class: _vm.width }, [
     _c(
       "div",
       { staticClass: "help bg-white p-15", staticStyle: { height: "1848px" } },
       [
-        _c(
-          "h3",
-          { staticClass: "mt-0 c-bright-green border-bot p-bot-10 mb-15" },
-          [_vm._v("Help")]
-        ),
+        !_vm.help
+          ? _c(
+              "h4",
+              { staticClass: "mt-0 c-bright-green border-bot pb-10 mb-24" },
+              [_vm._v("Help")]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.help
+          ? _c(
+              "div",
+              {
+                staticClass: "heading border-bot",
+                staticStyle: {
+                  margin: "0 0 20px 0",
+                  "padding-bottom": "16px",
+                  display: "flex",
+                  "align-items": "center",
+                  "justify-content": "space-between"
+                }
+              },
+              [
+                _c("h4", { staticClass: "mt-0 c-bright-green" }, [
+                  _vm._v("Help")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "update-info",
+                    staticStyle: { position: "relative", "margin-top": "0" }
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "pull-left",
+                      staticStyle: { "margin-top": "0" },
+                      attrs: {
+                        src: _vm.asset(_vm.url, "images/profile/pencil.png"),
+                        alt: ""
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "f-10 c-green pull-left",
+                        staticStyle: { "margin-top": "3px" },
+                        attrs: {
+                          href: _vm.asset(_vm.url, "profile/help/update")
+                        }
+                      },
+                      [_vm._v("Update your information")]
+                    )
+                  ]
+                )
+              ]
+            )
+          : _vm._e(),
         _vm._v(" "),
         _vm._l(_vm.helps, function(help) {
           return _c("div", { key: help.help_id, staticClass: "help-item" }, [

@@ -12,13 +12,13 @@
             <i class="fa fa-fw fa-envelope f-20 c-lighter pull-left"></i>
             <a :href="asset(url, 'profile/contacts')">Contacts</a>
         </li>
-        <li>
+        <li :class="navActive(nav, 'mission')">
             <i class="fa fa-fw fa-pencil-square f-20 c-lighter pull-left"></i>
-            <a href="mission_vision.html">Mission Vision Goals</a>
+            <a :href="asset(url, 'profile/mission')">Mission Vision Goals</a>
         </li>
-        <li>
-            <i class="fa fa-fw fa-question-circle f-20 c-lighter pull-left"></i>
-            <a href="help.html">Help</a>
+        <li :class="navActive(nav, 'help')">
+            <i class="fa fa-fw fa-pencil-square f-20 c-lighter pull-left"></i>
+            <a :href="asset(url, 'profile/help')">Help</a>
         </li>
     </ul>
 </template>

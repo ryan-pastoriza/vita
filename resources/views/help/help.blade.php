@@ -6,6 +6,6 @@
 
 @section('content')
 
-<app-help url="{{asset('')}}" preloaded="{{json_encode($data['help'])}}"></app-help>
+<app-help url="{{asset('')}}" preloaded="{{json_encode($data['help'])}}" width="col-md-9"></app-help>
 
 @stop

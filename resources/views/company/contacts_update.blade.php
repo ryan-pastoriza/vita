@@ -18,16 +18,32 @@
 		<div class="job-posted bg-white">
 			<div class="business-info p-15">
 				<div class="heading border-bot" style="margin:0 0 20px 0;padding-bottom:16px;display:flex;align-items:center;justify-content:space-between;">
-					<h4 class="mt-0 c-bright-green">Update Business Information</h4>
+					<h4 class="mt-0 c-bright-green">Update Contacts</h4>
 					
 				</div>
 				
 				<div class="business-info-content">
-                    <form action="{{route('company.profile.store', ['company_id'=>$data['company_info']->company_id])}}" method="POST">
-                        {{csrf_field()}}
-                        <textarea class="mb-15" name="business_info" id="" rows="20" value="">
-							{{$data['company_info']->business_information}}
-						</textarea>
+                    <form action="{{route('company.contact.store', ['company_id'=>$data['company_info']->company_id])}}" method="POST">
+						{{csrf_field()}}
+						<div class="form-group">
+							<label for="">Tel No.</label>
+							<input type="text" name="tel_no" class="form-control" required value="{{$data['company_info']->tel_no}}">
+						</div>
+						<div class="form-group">
+							<label for="">Fax No.</label>
+							<input type="text" name="fax_no" class="form-control" value="{{$data['company_info']->fax_no}}">
+						</div>
+						<div class="form-group">
+							<label for="">Email</label>
+							<input type="email" name="email" class="form-control" required value="{{$data['company_info']->email}}">
+						</div>
+						<div class="form-group">
+							<label for="">Description</label>
+							<textarea class="mb-15 form-control" name="contact_description" id="" rows="12" value="">
+								{{$data['company_info']->contact_description}}
+							</textarea>
+						</div>
+                        
                         <button id="submitBtn" type="submit" class="btn btn-primary" style="margin-top:16px;">Submit</button>
                     </form>
 				</div>	

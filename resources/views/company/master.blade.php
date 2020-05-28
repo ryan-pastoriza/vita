@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('/css/custom.css')}}">
 	<link rel="stylesheet" href="{{asset('/css/visit.css')}}">
 	<link rel="stylesheet" href="{{asset('/css/profile.css')}}">
+	<link rel="stylesheet" href="{{asset('css/help.css')}}">
 	<script src="http://cloud.tinymce.com/stable/tinymce.min.js?apiKey=eplqq2bh36kh5c0hmf2gb7pi3vuowkbs2rvs8mtpsxaopdii"></script>
   	<script>tinymce.init({selector:'textarea'});</script>
 
@@ -26,7 +27,7 @@
 
 	<header class="header">
 		<div class="container">
-			<a href="index.html" class="pull-left">
+			<a href="{{url('')}}" class="pull-left">
 				<img src="{{asset('/images/logo.png')}}" class="logo">
 			</a>
 			<!-- <div class="alumni-type pull-left">
