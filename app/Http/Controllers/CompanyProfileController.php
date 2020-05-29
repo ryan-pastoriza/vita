@@ -163,4 +163,21 @@ class CompanyProfileController extends Controller
             ]);
     }
 
+    public function helpUpdate() {
+        $user = Auth::user();
+        $data = [];
+        $data['partners'] = \App\Company::select('company_id','logo')->get();
+        $data['ads'] = \App\Advertisement::select('ad_id','file')->get();
+        $data['company_info'] = \App\Company::find(Auth::user()->company_id);
+        $data['jobs_posted'] = \App\JobPost::where('company_id', Auth::user()->company_id)->get();
+        $data['help'] = \App\Help::all();
+
+        return view('company.help_update')
+            ->with([
+                'nav'       =>  'profile',
+                'subnav'    =>  'help',
+                'data'      =>  $data
+            ]);
+    }
+
 }

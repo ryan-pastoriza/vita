@@ -17,7 +17,7 @@
 	<div class="col-xs-8 s-pad">
         <div class="job-posted bg-white">
             <div class="business-info p-15">
-            <div class="heading border-bot" style="margin:0 0 20px 0;padding-bottom:16px;display:flex;align-items:center;justify-content:space-between;">
+            	<div class="heading border-bot" style="margin:0 0 20px 0;padding-bottom:16px;display:flex;align-items:center;justify-content:space-between;">
 					<h4 class="mt-0 c-bright-green">Contact</h4>
 					<div class="update-info" style="position:relative;margin-top:0;">
 						<img src="{{asset('images/profile/pencil.png')}}" style="margin-top:0" alt="" class="pull-left">
